@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thesoul.shopkill.dao.SecOrderMapper">
+
+    <resultMap id="SecOrderMap" type="com.thesoul.shopkill.entity.SecOrder">
+        <id property="id" column="id" javaType="String"></id>
+        <result property="userId" column="userId" javaType="String"></result>
+        <result property="productId" column="productId" javaType="String"></result>
+        <result property="productPrice" column="productPrice" javaType="BigDecimal"></result>
+        <result property="amount" column="amount" javaType="BigDecimal"></result>
+    </resultMap>
+
+    <select id="findByProductId" resultMap="SecOrderMap">
+        SELECT * FROM secorder WHERE secorder.productId=#{productId};
+    </select>
+
+    <insert id="save" parameterType="secOrder">
+        INSERT INTO secorder(id,userId,productId,productPrice,amount) VALUES(#{id},#{userId},#{productId},#{productPrice},#{amount});
+    </insert>
+
+</mapper>

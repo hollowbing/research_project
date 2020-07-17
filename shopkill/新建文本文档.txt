@@ -1,0 +1,11 @@
+   /*if (!SecUtils.dummyPay()){
+            log.error("付款慢啦抢购失败，再接再厉哦");
+            return "抢购失败，再接再厉哦";
+        }*/
+
+        //订单信息保存在redis中
+      /*  try {
+            secKillService.orderProductMockDiffUser(productId,secOrder);
+        }catch (Exception e){
+            return e.getMessage();
+        }*/
